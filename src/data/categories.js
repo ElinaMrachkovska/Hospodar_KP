@@ -3,10 +3,10 @@ export const contact = {
   tagline: "Кам'янця-Подільського",
   fullName: "Господар Кам'янця-Подільського",
   region: "Кам'янець-Подільський та область",
-  phones: [
-    { raw: '380671202640', display: '067 120 26 40' },
-    { raw: '380977464986', display: '097 746 49 86' },
-  ],
+phones: [
+  { raw: '380671202640', display: '067 120 26 40', icon: 'phone' },
+  { raw: '380977464986', display: '097 746 49 86', icon: 'viber' },
+],
   social: [
     { name: 'Instagram', icon: 'instagram', url: 'https://www.instagram.com/gavriliuk6217?igsh=eDM4dG8xcXA5bXhw' },
     { name: 'Facebook', icon: 'facebook', url: 'https://www.facebook.com/share/1BEQRD9NRh/' },

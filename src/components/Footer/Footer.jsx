@@ -49,7 +49,10 @@ export default function Footer() {
           <ul>
             {contact.phones.map((p) => (
               <li key={p.raw}>
-                <a href={`tel:${p.raw}`}>{p.display}</a>
+               <a href={`tel:${p.raw}`} className={styles.phoneLink}>
+  <Icon name={p.icon} size={15} />
+  {p.display}
+</a>
               </li>
             ))}
           </ul>

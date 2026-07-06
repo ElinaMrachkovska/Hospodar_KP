@@ -96,6 +96,11 @@
   opacity: 1;
   text-decoration: underline;
 }
+.phoneLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
 
 .contactLink {
   display: inline-flex;

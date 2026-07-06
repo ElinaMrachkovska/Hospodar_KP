@@ -60,6 +60,9 @@
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--pine-deep);
+  display: inline-flex;
+align-items: center;
+gap: 0.55rem;
 }
 
 .phone:hover {

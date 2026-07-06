@@ -24,7 +24,10 @@ export default function Contacts() {
               <span className={styles.infoLabel}><Icon name="phone" size={17} /> Телефони</span>
               <div className={styles.phones}>
                 {contact.phones.map((p) => (
-                  <a href={`tel:${p.raw}`} key={p.raw} className={styles.phone}>{p.display}</a>
+                  <a href={`tel:${p.raw}`} key={p.raw} className={styles.phone}>
+  <Icon name={p.icon} size={22} />
+  {p.display}
+</a>
                 ))}
               </div>
             </div>
