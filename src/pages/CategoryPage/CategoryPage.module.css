@@ -1,0 +1,155 @@
+.intro {
+  padding: var(--space-4) 0 var(--space-3);
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--pine);
+  margin-bottom: var(--space-3);
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+.backIcon {
+  transform: rotate(180deg);
+}
+
+.introRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.iconWrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--card);
+  border: 1px solid var(--line);
+  color: var(--pine-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+  margin-top: 0.3rem;
+}
+
+.lead {
+  max-width: 66ch;
+  opacity: 0.88;
+  font-size: 1.05rem;
+}
+
+.mediaSection {
+  padding-bottom: var(--space-4);
+}
+
+.section {
+  padding: var(--space-4) 0;
+}
+
+.sectionTitle {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  margin-top: 0.4rem;
+  margin-bottom: var(--space-3);
+}
+
+.list {
+  padding: var(--space-3) 0 var(--space-5);
+}
+
+.stack {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+.otherSection {
+  background-color: var(--paper-deep);
+  padding: var(--space-4) 0;
+}
+
+.otherGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.otherCard {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--space-2) var(--space-3);
+  font-weight: 500;
+  color: var(--pine-deep);
+  transition: border-color 0.15s ease;
+}
+
+.otherCard:hover {
+  border-color: var(--pine);
+}
+
+.otherCard svg:first-child {
+  color: var(--ochre-deep);
+  flex-shrink: 0;
+}
+
+.otherArrow {
+  margin-left: auto;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.cta {
+  padding: var(--space-5) 0;
+  text-align: center;
+}
+
+.ctaInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ctaTitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.ctaText {
+  opacity: 0.85;
+  max-width: 46ch;
+}
+
+.ctaActions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 780px) {
+  .stack {
+    grid-template-columns: 1fr;
+  }
+
+  .otherGrid {
+    grid-template-columns: 1fr;
+  }
+}

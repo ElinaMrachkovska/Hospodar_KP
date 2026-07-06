@@ -1,0 +1,76 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  background-color: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--pine-deep);
+}
+
+.field input,
+.field select,
+.field textarea {
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  padding: 0.7rem 0.85rem;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius);
+  background-color: var(--paper);
+  color: var(--ink);
+  resize: vertical;
+}
+
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible {
+  outline: none;
+  border-color: var(--pine);
+}
+
+.error {
+  font-size: 0.8rem;
+  color: #A13B2C;
+}
+
+.submit {
+  margin-top: 0.4rem;
+  justify-content: center;
+}
+
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  background-color: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  color: var(--pine-deep);
+}
+
+.success h3 {
+  font-size: 1.3rem;
+}
+
+.success p {
+  color: var(--ink);
+  opacity: 0.85;
+}
+
+.success button {
+  margin-top: 0.4rem;
+}
