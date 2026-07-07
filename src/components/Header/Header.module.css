@@ -2,7 +2,8 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background-color: var(--paper);
+  background-color: rgba(22, 35, 61, 0.88);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
 
@@ -25,6 +26,11 @@
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.logo:hover .logoMark {
+  transform: rotate(-10deg) scale(1.06);
 }
 
 .logoText {
@@ -53,21 +59,41 @@
 }
 
 .navLink {
+  position: relative;
   font-size: 0.96rem;
   font-weight: 500;
   color: var(--ink);
   padding: 0.4rem 0.1rem;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.15s ease, color 0.15s ease;
+  transition: color 0.2s ease;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: -1px;
+  height: 2px;
+  background-color: var(--ochre);
+  transition: left 0.25s ease, right 0.25s ease;
 }
 
 .navLink:hover {
   color: var(--pine-deep);
 }
 
+.navLink:hover::after {
+  left: 0;
+  right: 0;
+}
+
 .navLinkActive {
-  border-bottom-color: var(--ochre);
   color: var(--pine-deep);
+}
+
+.navLinkActive::after {
+  left: 0;
+  right: 0;
 }
 
 .navCta {

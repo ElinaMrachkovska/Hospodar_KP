@@ -33,13 +33,13 @@ export default function SeasonStrip({ services }) {
         </span>
       </div>
 
-      {services.map((s) => {
+      {services.map((s, i) => {
         const range = parseRange(s.season)
         if (!range) return null
         const isAll = range === 'all'
         const style = isAll
-          ? { gridColumn: '1 / 13' }
-          : { gridColumn: `${range[0]} / ${range[1] + 1}` }
+          ? { gridColumn: '1 / 13', '--i': i }
+          : { gridColumn: `${range[0]} / ${range[1] + 1}`, '--i': i }
 
         return (
           <div className={styles.row} key={s.id}>

@@ -7,6 +7,11 @@ phones: [
   { raw: '380671202640', display: '067 120 26 40', icon: 'phone' },
   { raw: '380977464986', display: '097 746 49 86', icon: 'viber' },
 ],
+messengers: [
+  { name: 'Viber', icon: 'viber', url: 'viber://chat?number=%2B380671202640' },
+  { name: 'Telegram', icon: 'telegram', url: 'https://t.me/+380977464986' },
+  { name: 'WhatsApp', icon: 'whatsapp', url: 'https://wa.me/380977464986' },
+],
   social: [
     { name: 'Instagram', icon: 'instagram', url: 'https://www.instagram.com/gavriliuk6217?igsh=eDM4dG8xcXA5bXhw' },
     { name: 'Facebook', icon: 'facebook', url: 'https://www.facebook.com/share/1BEQRD9NRh/' },
@@ -70,7 +75,7 @@ export const categories = [
         season: 'Травень – вересень',
         icon: 'grass',
         description:
-          'Косю як доглянутий газон, так і ділянки, що заросли по пояс — після зими, при купівлі нової землі чи просто коли руки не доходили. Прибираю скошене, щоб трава не задушила молоду поросль знизу.',
+          'Скошую як доглянутий газон, так і ділянки, що заросли по пояс — після зими, при купівлі нової землі чи просто коли руки не доходили. Прибираю скошене, щоб трава не задушила молоду поросль знизу.',
       },
       {
         id: 'chagarnyky',

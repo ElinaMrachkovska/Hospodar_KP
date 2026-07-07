@@ -92,14 +92,15 @@
   transition: opacity 0.15s ease;
 }
 
-.col a:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
 .phoneLink {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+}
+
+.col a:hover {
+  opacity: 1;
+  text-decoration: underline;
 }
 
 .contactLink {

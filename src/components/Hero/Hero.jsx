@@ -24,12 +24,28 @@ export default function Hero() {
               Переглянути послуги
             </Link>
           </div>
-          <div className={styles.meta}>
+  <div className={styles.meta}>
             <span><Icon name="clock" size={16} /> Заявки щодня, 8:00–20:00</span>
             <span><Icon name="pin" size={16} /> Виїзд по місту й області</span>
           </div>
+    
+          <div className={styles.messengers}>
+            {contact.messengers.map((m) => (
+              <a
+                href={m.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={m.name}
+                className={styles.messengerLink}
+                aria-label={m.name}
+              >
+                <Icon name={m.icon} size={18} />
+                {m.name}
+              </a>
+            ))}
+          </div>
+      
         </div>
-
         <div className={styles.imageWrap}>
           <img
             src={`${import.meta.env.BASE_URL}media/sad/sad-1.jpg`}

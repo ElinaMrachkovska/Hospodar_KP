@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 :root {
-  --paper: #F1EEE2;
-  --paper-deep: #E8E3D2;
-  --ink: #232A1E;
-  --pine: #3D5A34;
-  --pine-deep: #2A3F24;
-  --ochre: #B8792B;
-  --ochre-deep: #96601F;
-  --line: #C9C3AC;
-  --card: #FBFAF4;
+  --paper: #16233D;
+  --paper-deep: #1E2E4E;
+  --ink: #E8ECF4;
+  --pine: #E0893C;
+  --pine-deep: #F0A15C;
+  --ochre: #5EEAD4;
+  --ochre-deep: #2DD4BF;
+  --line: rgba(232, 236, 244, 0.16);
+  --card: #1C2C4A;
 
-  --font-display: 'Fraunces', 'Georgia', serif;
-  --font-body: 'Work Sans', 'Segoe UI', sans-serif;
+  --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
   --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
 
   --space-1: 0.5rem;
@@ -22,7 +22,7 @@
   --space-5: 4rem;
   --space-6: 6rem;
 
-  --radius: 4px;
+  --radius: 3px;
   --max-width: 1180px;
 }
 
@@ -48,6 +48,10 @@ html {
 body {
   margin: 0;
   background-color: var(--paper);
+  background-image:
+    linear-gradient(rgba(232, 236, 244, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232, 236, 244, 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 16px;
@@ -99,10 +103,12 @@ img {
   font-size: 0.78rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ochre-deep);
+  color: var(--ochre);
 }
 
+/* Buttons: lift + glow + diagonal sheen sweep on hover */
 .btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -112,7 +118,25 @@ img {
   font-weight: 600;
   font-size: 0.98rem;
   border: 1.5px solid transparent;
-  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(115deg, transparent 20%, rgba(255, 255, 255, 0.25) 40%, transparent 60%);
+  transform: translateX(-120%);
+  transition: transform 0.5s ease;
+}
+
+.btn:hover::before {
+  transform: translateX(120%);
 }
 
 .btn:focus-visible {
@@ -127,7 +151,8 @@ img {
 
 .btn-primary:hover {
   background-color: var(--pine-deep);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -6px rgba(224, 137, 60, 0.45);
 }
 
 .btn-outline {
@@ -139,9 +164,27 @@ img {
 .btn-outline:hover {
   background-color: var(--pine);
   color: var(--paper);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -6px rgba(224, 137, 60, 0.35);
 }
 
 ::selection {
   background-color: var(--ochre);
   color: var(--paper);
+}
+
+/* Ambient drifting glow orbs — used behind the hero */
+@keyframes drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, -30px) scale(1.15); }
+}
+
+@keyframes drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-35px, 25px) scale(1.1); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
 }
