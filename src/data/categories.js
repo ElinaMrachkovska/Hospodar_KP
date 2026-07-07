@@ -276,7 +276,6 @@ export const categories = [
     media: {
       photos: [
         'media/vyviz/dubovyie-drova2.jpg',
-        'media/vyviz/images.jpeg',
         'https://images.unsplash.com/photo-1713730060332-2e478ce2e318?auto=format&fit=crop&w=900&q=75',
         'https://images.unsplash.com/photo-1704756082548-af7c773aa0ef?auto=format&fit=crop&w=900&q=75',
       ],
