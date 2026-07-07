@@ -281,7 +281,6 @@ export const categories = [
         'media/vyviz/images.jpeg',
         'media/vyviz/0566.jpg',
         'https://images.unsplash.com/photo-1713730060332-2e478ce2e318?auto=format&fit=crop&w=900&q=75',
-        'https://images.unsplash.com/photo-1704756082548-af7c773aa0ef?auto=format&fit=crop&w=900&q=75',
       ],
       videos: [],
     },
