@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 :root {
-  --paper: #16233D;
-  --paper-deep: #1E2E4E;
-  --ink: #E8ECF4;
-  --pine: #E0893C;
-  --pine-deep: #F0A15C;
-  --ochre: #5EEAD4;
-  --ochre-deep: #2DD4BF;
-  --line: rgba(232, 236, 244, 0.16);
-  --card: #1C2C4A;
+  --paper: #FBF3E7;
+  --paper-deep: #F3E4CC;
+  --ink: #2B2118;
+  --pine: #FF3D1A;
+  --pine-deep: #C22800;
+  --ochre: #2E7D32;
+  --ochre-deep: #1B5E20;
+  --line: rgba(43, 33, 24, 0.14);
+  --card: #FFFDF9;
 
   --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
   --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
@@ -49,8 +49,8 @@ body {
   margin: 0;
   background-color: var(--paper);
   background-image:
-    linear-gradient(rgba(232, 236, 244, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(232, 236, 244, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(43, 33, 24, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(43, 33, 24, 0.045) 1px, transparent 1px);
   background-size: 44px 44px;
   color: var(--ink);
   font-family: var(--font-body);

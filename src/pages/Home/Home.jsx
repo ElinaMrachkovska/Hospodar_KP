@@ -1,65 +1,119 @@
 import { Link } from 'react-router-dom'
-import Icon from '../Icon'
-import { contact } from '../../data/categories'
-import styles from './Hero.module.css'
+import Hero from '../../components/Hero/Hero'
+import Icon from '../../components/Icon'
+import { categories, contact } from '../../data/categories'
+import styles from './Home.module.css'
 
-export default function Hero() {
+const steps = [
+  {
+    n: '1',
+    title: 'Дзвінок і опис завдання',
+    text: 'Розповідаєте, що потрібно: сад, демонтаж, вивіз сміття чи скупка металу. Орієнтовно оцінюю обсяг робіт.',
+  },
+  {
+    n: '2',
+    title: 'Виїзд і огляд',
+    text: 'Приїжджаю, дивлюся на місці, кажу чесно, що варто робити зараз, а що може почекати.',
+  },
+  {
+    n: '3',
+    title: 'Виконання роботи',
+    text: 'Працюю зі своїм інструментом і технікою — від секатора до дробарки, нічого орендувати додатково.',
+  },
+  {
+    n: '4',
+    title: 'Прибирання після себе',
+    text: 'Ділянку чи приміщення залишаю чистими: сміття, гілки й залишки роботи вивезені.',
+  },
+]
+
+export default function Home() {
   return (
-    <section className={styles.hero}>
-      <div className={styles.glowA} aria-hidden="true" />
-      <div className={styles.glowB} aria-hidden="true" />
-      <div className={`container ${styles.grid}`}>
-        <div className={styles.text}>
-          <span className="eyebrow">{contact.region}</span>
-          <h1 className={styles.title}>
-            Сад, демонтаж, вивіз — <em>усе в одних руках</em>
-          </h1>
-          <p className={styles.lead}>
-            Обрізаю дерева, розбираю старі будівлі, вивожу сміття та скуповую метал і стару
-            електроніку. Приїжджаю, дивлюсь, кажу чесно, що і коли потрібно робити.
-          </p>
-          <div className={styles.actions}>
-            <a href={`tel:${contact.phones[0].raw}`} className="btn btn-primary">
-              <Icon name="phone" size={17} /> {contact.phones[0].display}
-            </a>
-            <Link to="/poslugy" className="btn btn-outline">
-              Переглянути послуги
-            </Link>
-          </div>
-          <div className={styles.meta}>
-            <span><Icon name="clock" size={16} /> Заявки щодня, 8:00–20:00</span>
-            <span><Icon name="pin" size={16} /> Виїзд по місту й області</span>
-          </div>
+    <>
+      <Hero />
 
-          <div className={styles.messengers}>
-            {contact.messengers.map((m) => (
-              <a
-                href={m.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                key={m.name}
-                className={styles.messengerLink}
-                aria-label={m.name}
-              >
-                <Icon name={m.icon} size={18} />
-                {m.name}
-              </a>
+      <section className={styles.section}>
+        <div className="container">
+          <span className="eyebrow">Напрямки роботи</span>
+          <h2 className={styles.sectionTitle}>Чотири справи одного господаря</h2>
+          <div className={styles.grid}>
+            {categories.map((cat) => (
+              <Link to={`/poslugy/${cat.slug}`} className={styles.card} key={cat.slug}>
+                <div className={styles.cardIcon}>
+                  <Icon name={cat.icon} size={28} strokeWidth={1.4} />
+                </div>
+                <h3 className={styles.cardTitle}>{cat.title}</h3>
+                <p className={styles.cardText}>{cat.short}</p>
+                <span className={styles.cardLink}>
+                  Детальніше <Icon name="arrow" size={14} />
+                </span>
+              </Link>
             ))}
           </div>
         </div>
+      </section>
 
-        <div className={styles.imageWrap}>
-          <img
-            src={`${import.meta.env.BASE_URL}media/sad/sad-1.jpg`}
-            alt="Робота на ділянці"
-            className={styles.image}
-          />
-          <div className={styles.card}>
-            <span className={styles.cardNum}>4</span>
-            <span className={styles.cardLabel}>напрямки роботи<br />в одних руках</span>
+      <section className={styles.sectionAlt}>
+        <div className="container">
+          <span className="eyebrow">Як це відбувається</span>
+          <h2 className={styles.sectionTitle}>Від дзвінка до результату</h2>
+          <div className={styles.steps}>
+            {steps.map((step) => (
+              <div className={styles.step} key={step.n}>
+                <span className={styles.stepNum}>{step.n}</span>
+                <h3 className={styles.stepTitle}>{step.title}</h3>
+                <p className={styles.stepText}>{step.text}</p>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section className={styles.section}>
+        <div className={`container ${styles.whyGrid}`}>
+          <div>
+            <span className="eyebrow">Чому саме я</span>
+            <h2 className={styles.sectionTitle}>Один майстер, а не колцентр</h2>
+            <p className={styles.sectionLead}>
+              Дзвоните напряму мені, а не менеджеру. Я сам оглядаю об'єкт, сам виконую роботу і сам
+              відповідаю за результат — без посередників і накруток за "координацію бригади".
+            </p>
+          </div>
+          <ul className={styles.whyList}>
+            <li>
+              <Icon name="shears" size={22} />
+              <span>Свій інструмент і техніка — нічого орендувати додатково</span>
+            </li>
+            <li>
+              <Icon name="clock" size={22} />
+              <span>Приїжджаю у домовлений час, без переносів "на завтра"</span>
+            </li>
+            <li>
+              <Icon name="truck" size={22} />
+              <span>Вивезу і утилізую все, що лишається після роботи</span>
+            </li>
+            <li>
+              <Icon name="pin" size={22} />
+              <span>{contact.region} — без націнки "за виїзд"</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section className={styles.cta}>
+        <div className={`container ${styles.ctaInner}`}>
+          <div>
+            <h2 className={styles.ctaTitle}>Є робота, яку давно відкладали?</h2>
+            <p className={styles.ctaText}>Зателефонуйте — домовимось про огляд і скажу чесно, що робити.</p>
+          </div>
+          <div className={styles.ctaActions}>
+            <a href={`tel:${contact.phones[0].raw}`} className="btn btn-primary">
+              <Icon name="phone" size={17} /> {contact.phones[0].display}
+            </a>
+            <Link to="/kontakty" className="btn btn-outline">Залишити заявку</Link>
+          </div>
+        </div>
+      </section>
+    </>
   )
 }
