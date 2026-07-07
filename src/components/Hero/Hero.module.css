@@ -1,205 +1,173 @@
-.section {
-  padding: var(--space-5) 0;
+.hero {
+  position: relative;
+  padding: var(--space-5) 0 var(--space-6);
+  overflow: hidden;
 }
 
-.sectionAlt {
-  padding: var(--space-5) 0;
-  background-color: var(--paper-deep);
+.glowA,
+.glowB {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.sectionTitle {
-  font-size: clamp(1.7rem, 3vw, 2.3rem);
-  margin-top: 0.4rem;
-  max-width: 24ch;
+.glowA {
+  width: 420px;
+  height: 420px;
+  top: -120px;
+  right: 8%;
+  background: var(--pine);
+  animation: drift-a 14s ease-in-out infinite;
 }
 
-.sectionLead {
-  margin-top: var(--space-2);
-  max-width: 62ch;
-  opacity: 0.88;
+.glowB {
+  width: 340px;
+  height: 340px;
+  bottom: -100px;
+  left: 4%;
+  background: var(--ochre);
+  animation: drift-b 17s ease-in-out infinite;
 }
 
 .grid {
+  position: relative;
+  z-index: 1;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  animation: fade-up 0.7s ease both;
+}
+
+.title {
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  color: var(--pine-deep);
+}
+
+.title em {
+  font-style: italic;
+  color: var(--ochre);
+}
+
+.lead {
+  font-size: 1.08rem;
+  max-width: 46ch;
+  color: var(--ink);
+  opacity: 0.85;
+  margin-top: var(--space-1);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-top: var(--space-2);
+}
+
+.meta {
+  display: flex;
   gap: var(--space-3);
-  margin-top: var(--space-4);
+  flex-wrap: wrap;
+  margin-top: var(--space-2);
+  font-size: 0.86rem;
+  font-family: var(--font-mono);
+  opacity: 0.7;
+}
+
+.meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.messengers {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 0.4rem;
+}
+
+.messengerLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background-color: var(--card);
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--pine-deep);
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.messengerLink:hover {
+  border-color: var(--pine);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px -6px rgba(224, 137, 60, 0.35);
+}
+
+.imageWrap {
+  position: relative;
+  z-index: 1;
+  animation: fade-up 0.8s ease 0.1s both;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
 }
 
 .card {
-  background-color: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: var(--space-3);
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  transition: border-color 0.25s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
-}
-
-.card:hover {
-  border-color: var(--pine);
-  transform: translateY(-4px);
-  box-shadow: 0 16px 32px -12px rgba(224, 137, 60, 0.3);
-}
-
-.card:hover .cardIcon {
-  transform: rotate(-8deg) scale(1.08);
-  color: var(--pine);
-}
-
-.cardIcon {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background-color: var(--paper-deep);
-  color: var(--pine-deep);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.25s ease;
-}
-
-.cardTitle {
-  font-size: 1.25rem;
-  color: var(--pine-deep);
-}
-
-.cardText {
-  font-size: 0.94rem;
-  opacity: 0.88;
-  flex-grow: 1;
-}
-
-.cardLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: var(--pine);
-}
-
-.steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-3);
-  margin-top: var(--space-4);
-}
-
-.step {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  border-top: 2px solid var(--ochre);
-  padding-top: var(--space-2);
-}
-
-.stepNum {
-  font-family: var(--font-mono);
-  color: var(--ochre-deep);
-  font-size: 0.85rem;
-}
-
-.stepTitle {
-  font-size: 1.08rem;
-  color: var(--pine-deep);
-}
-
-.stepText {
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
-
-.whyGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-5);
-  align-items: start;
-}
-
-.whyList {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-}
-
-.whyList li {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-2);
-  background-color: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  color: var(--pine-deep);
-  font-weight: 500;
-  transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.whyList li:hover {
-  transform: translateX(4px);
-  border-color: var(--ochre);
-}
-
-.whyList svg {
-  flex-shrink: 0;
-  color: var(--ochre-deep);
-}
-
-.cta {
+  position: absolute;
+  left: -1.5rem;
+  bottom: -1.5rem;
   background-color: var(--pine);
   color: var(--paper);
-  padding: var(--space-5) 0;
-  margin-top: var(--space-4);
-}
-
-.ctaInner {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: var(--space-3);
+  gap: 0.8rem;
+  box-shadow: 0 16px 32px -8px rgba(224, 137, 60, 0.4);
 }
 
-.ctaTitle {
+.cardNum {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
   color: var(--paper);
-  font-size: clamp(1.6rem, 3vw, 2.1rem);
 }
 
-.ctaText {
-  margin-top: 0.4rem;
+.cardLabel {
+  font-size: 0.78rem;
+  line-height: 1.3;
   opacity: 0.9;
 }
 
-.ctaActions {
-  display: flex;
-  gap: var(--space-2);
-  flex-wrap: wrap;
-}
-
-.ctaActions .btn-outline {
-  color: var(--paper);
-  border-color: var(--paper);
-}
-
-.ctaActions .btn-outline:hover {
-  background-color: var(--paper);
-  color: var(--pine-deep);
-}
-
 @media (max-width: 900px) {
-  .steps {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .whyGrid {
+  .grid {
     grid-template-columns: 1fr;
   }
-}
 
-@media (max-width: 560px) {
-  .steps {
-    grid-template-columns: 1fr;
+  .imageWrap {
+    order: -1;
+  }
+
+  .card {
+    left: var(--space-2);
+    bottom: -1rem;
   }
 }
