@@ -3,14 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "oxlint",
-    "preview": "vite preview",
-    "start": "browser-sync start --server --files 'index.html, src/**/*.css, src/**/*.js'",
-    "deploy": "gh-pages -d ."
-  },
+ "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "lint": "oxlint",
+  "preview": "vite preview",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+},
   "dependencies": {
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
