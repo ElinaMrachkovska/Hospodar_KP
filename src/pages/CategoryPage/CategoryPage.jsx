@@ -3,6 +3,7 @@ import { useParams, useLocation, Link, Navigate } from 'react-router-dom'
 import ServiceCard from '../../components/ServiceCard/ServiceCard'
 import SeasonStrip from '../../components/SeasonStrip/SeasonStrip'
 import MediaGallery from '../../components/MediaGallery/MediaGallery'
+import LandscapeBanner from '../../components/LandscapeBanner/LandscapeBanner'
 import Icon from '../../components/Icon'
 import { getCategory, categories, contact } from '../../data/categories'
 import styles from './CategoryPage.module.css'
@@ -46,6 +47,8 @@ export default function CategoryPage() {
           <p className={styles.lead}>{category.intro}</p>
         </div>
       </section>
+
+      {category.slug === 'sad-ta-landshaft' && <LandscapeBanner />}
 
       <section className={styles.mediaSection}>
         <div className="container">

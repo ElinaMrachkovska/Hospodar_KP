@@ -40,7 +40,7 @@
 .card:hover {
   border-color: var(--pine);
   transform: translateY(-4px);
-  box-shadow: 0 16px 32px -12px rgba(224, 137, 60, 0.3);
+  box-shadow: 0 16px 32px -12px rgba(255, 61, 26, 0.3);
 }
 
 .card:hover .cardIcon {
@@ -148,8 +148,8 @@
 }
 
 .cta {
-  background-color: var(--pine);
-  color: var(--paper);
+  background: var(--gradient-warm);
+  color: #fff;
   padding: var(--space-5) 0;
   margin-top: var(--space-4);
 }
@@ -163,13 +163,14 @@
 }
 
 .ctaTitle {
-  color: var(--paper);
+  color: #fff;
   font-size: clamp(1.6rem, 3vw, 2.1rem);
 }
 
 .ctaText {
   margin-top: 0.4rem;
-  opacity: 0.9;
+  opacity: 0.95;
+  color: #fff;
 }
 
 .ctaActions {
@@ -178,13 +179,24 @@
   flex-wrap: wrap;
 }
 
+.ctaActions :global(.btn-primary) {
+  background: #fff;
+  color: var(--pine-deep);
+  text-shadow: none;
+}
+
+.ctaActions :global(.btn-primary:hover) {
+  background: #fff;
+  box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.3);
+}
+
 .ctaActions .btn-outline {
-  color: var(--paper);
-  border-color: var(--paper);
+  color: #fff;
+  border-color: #fff;
 }
 
 .ctaActions .btn-outline:hover {
-  background-color: var(--paper);
+  background-color: #fff;
   color: var(--pine-deep);
 }
 
