@@ -7,7 +7,7 @@ export default function LandscapeBanner() {
   return (
     <section className={styles.banner}>
       <img
-        src={`${import.meta.env.BASE_URL}media/sad/sad-6.jpg`}
+        src={`${import.meta.env.BASE_URL}media/sad/baner-land.jpg`}
         alt="Ландшафтний дизайн ділянки"
         className={styles.bg}
       />
@@ -25,7 +25,7 @@ export default function LandscapeBanner() {
           <a href={`tel:${contact.phones[0].raw}`} className="btn btn-primary">
             <Icon name="phone" size={17} /> Обговорити ділянку
           </a>
-          <Link to="/kontakty" className={`btn btn-outline ${styles.btnOnDark}`}>Залишити заявку</Link>
+          <Link to="/kontakty" className={`btn btn-secondary ${styles.btnOnDark}`}>Залишити заявку</Link>
         </div>
       </div>
     </section>

@@ -99,8 +99,10 @@
   gap: 0.5rem;
 }
 
-.ctaTitle {
-  font-size: clamp(1.5rem, 3vw, 2rem);
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--pine-deep);
 }
 
 .ctaText {
