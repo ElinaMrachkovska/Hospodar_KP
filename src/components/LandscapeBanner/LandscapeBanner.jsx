@@ -25,7 +25,7 @@ export default function LandscapeBanner() {
           <a href={`tel:${contact.phones[0].raw}`} className="btn btn-primary">
             <Icon name="phone" size={17} /> Обговорити ділянку
           </a>
-          <Link to="/kontakty" className={`btn btn-secondary ${styles.btnOnDark}`}>Залишити заявку</Link>
+          <Link to="/kontakty" className={`btn btn-outline ${styles.btnOnDark}`}>Залишити заявку</Link>
         </div>
       </div>
     </section>

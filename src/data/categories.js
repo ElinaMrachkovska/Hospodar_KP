@@ -39,9 +39,14 @@ export const categories = [
         'media/sad/sad-5.jpg',
         'media/sad/sad-7.jpg',
         'media/sad/sad-3.jpg',
-        'media/sad/sad-6.jpg',
         'media/sad/sad-4.jpg',
+        'media/sad/sad-12.jpg',
+        'media/sad/sad-13.jpg',
+        'media/sad/sad-14.jpg',
+        'media/sad/sad-15.jpg',
+        'media/sad/sad-16.jpg',
         'media/sad/vyviz-1.jpg',
+        
 
       ],
       videos: [

@@ -65,13 +65,14 @@
 }
 
 .btnOnDark {
-  color: #fff;
-  border-color: #fff;
+  color: #fff !important;
+  border-color: #fff !important;
+  background-color: transparent !important;
 }
 
 .btnOnDark:hover {
-  background-color: #fff;
-  color: var(--pine-deep);
+  background-color: #fff !important;
+  color: var(--pine-deep) !important;
 }
 
 @media (max-width: 640px) {

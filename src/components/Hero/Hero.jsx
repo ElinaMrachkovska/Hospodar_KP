@@ -6,6 +6,8 @@ import styles from './Hero.module.css'
 export default function Hero() {
   return (
     <section className={styles.hero}>
+      <div className={styles.glowA} aria-hidden="true" />
+      <div className={styles.glowB} aria-hidden="true" />
       <div className={`container ${styles.grid}`}>
         <div className={styles.text}>
           <span className="eyebrow">{contact.region}</span>
@@ -24,11 +26,11 @@ export default function Hero() {
               Переглянути послуги
             </Link>
           </div>
-  <div className={styles.meta}>
+          <div className={styles.meta}>
             <span><Icon name="clock" size={16} /> Заявки щодня, 8:00–20:00</span>
             <span><Icon name="pin" size={16} /> Виїзд по місту й області</span>
           </div>
-    
+
           <div className={styles.messengers}>
             {contact.messengers.map((m) => (
               <a
@@ -44,12 +46,12 @@ export default function Hero() {
               </a>
             ))}
           </div>
-      
         </div>
+
         <div className={styles.imageWrap}>
           <img
-            src={`${import.meta.env.BASE_URL}media/sad/sad-1.jpg`}
-            alt="Робота на ділянці"
+            src={`${import.meta.env.BASE_URL}media/collage.png`}
+            alt="Господар Кам'янця-Подільського — сад, скупка металу, демонтаж, вивіз сміття"
             className={styles.image}
           />
           <div className={styles.card}>
