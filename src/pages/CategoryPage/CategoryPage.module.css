@@ -43,10 +43,12 @@
 .title {
   font-size: clamp(1.9rem, 3.6vw, 2.6rem);
   margin-top: 0.3rem;
+  color: #3DDC5A;
+  text-shadow: 0 2px 6px rgba(27, 94, 32, 0.25);
 }
 
 .lead {
-  max-width: 66ch;
+  max-width: none;
   opacity: 0.88;
   font-size: 1.05rem;
 }

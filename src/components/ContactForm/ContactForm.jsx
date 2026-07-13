@@ -16,7 +16,7 @@ const initial = {
 export default function ContactForm() {
   const [values, setValues] = useState(initial)
   const [errors, setErrors] = useState({})
-  const [status, setStatus] = useState('idle') // idle | sending | sent | error
+  const [status, setStatus] = useState('idle') 
 
   function handleChange(e) {
     const { name, value } = e.target
@@ -58,8 +58,6 @@ export default function ContactForm() {
 
     setStatus('sending')
     try {
-      // Apps Script Web Apps don't return usable CORS headers for client-side
-      // fetch, so we send in no-cors mode and treat a resolved request as success.
       await fetch(GOOGLE_SHEETS_ENDPOINT, {
         method: 'POST',
         mode: 'no-cors',
