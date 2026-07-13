@@ -260,6 +260,7 @@ export const categories = [
         'https://images.unsplash.com/photo-1742715342246-7e144228f9f1?auto=format&fit=crop&w=900&q=75',
         'https://images.unsplash.com/photo-1584786454449-ecc77738684c?auto=format&fit=crop&w=900&q=75',
         'https://images.unsplash.com/photo-1709831917664-804b57448953?auto=format&fit=crop&w=900&q=75',
+      'media/vyviz/demontage.webp',
       ],
       videos: [],
     },

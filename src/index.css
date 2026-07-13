@@ -67,7 +67,8 @@ h1, h2, h3, h4 {
   font-weight: 600;
   line-height: 1.1;
   margin: 0;
-  color: var(--pine-deep);
+  color: #3DDC5A;
+  text-shadow: 0 2px 6px rgba(27, 94, 32, 0.25);
 }
 
 p {
